@@ -10,13 +10,12 @@ import java.util.Scanner;
 
 public class Ejercicio2 {
     public static void main() {
+
         Scanner sc = new Scanner(System.in);
 
         int precio;
         double descuento = 0.0;
-        int regular = 1;
-        int Premium = 2;
-        int VIP = 3;
+
         System.out.println("Introduzca el precio del producto: ");
         precio = sc.nextInt();
 
@@ -24,14 +23,15 @@ public class Ejercicio2 {
         System.out.println("1. Regular");
         System.out.println("2. Premium");
         System.out.println("3. VIP");
-        String categoria = sc.nextLine().toLowerCase();
+        int categoria = sc.nextInt();
 
-        if (categoria.equals("regular")) {
+        if (categoria == 1) {
             descuento = 0.05;
         }
-        else if (categoria.equals("premium")) {
+        else if (categoria == 2) {
             descuento = 0.1;
-        } else if (categoria.equals("VIP")) {
+        }
+        else if (categoria == 3) {
             descuento = 0.2;
 
             if (precio > 500) {
@@ -39,5 +39,7 @@ public class Ejercicio2 {
             }
         }
 
+        double resultado = precio - (precio * descuento);
+        System.out.println("Su precio final es de: "+resultado);
     }
 }
