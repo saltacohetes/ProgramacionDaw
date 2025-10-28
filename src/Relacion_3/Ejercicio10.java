@@ -20,16 +20,16 @@ public class Ejercicio10 {
         double sumaPesos = 0;
         double acumulado = 0;
 
-        System.out.println("Introduce el nombre, la nota y el peso (%) de 6 materias:");
+        System.out.println("Introduce el nombre, la nota y el peso (%) de 6 asignaturas:");
 
         for (int i = 1; i <= 6; i++) {
-            System.out.print("\nNombre de la materia " + i + ": ");
+            System.out.print("Nombre de la asignatura " + i + ": ");
             nombre = sc.next();
 
-            System.out.print("Nota de " + nombre + ": ");
+            System.out.print("Nota de "+nombre);
             nota = sc.nextDouble();
 
-            System.out.print("Peso de " + nombre + " (en %): ");
+            System.out.print("Peso de (en %): "+nombre);
             peso = sc.nextDouble();
 
             sumaPesos += peso;
@@ -37,15 +37,15 @@ public class Ejercicio10 {
             }
 
             if (sumaPesos != 100) {
-                System.out.println("\nERROR: La suma de los pesos debe ser exactamente 100%");
+                System.out.println("ERROR: La suma de los pesos debe ser exactamente 100%");
                 return;
             }
 
             double promedioPonderado = acumulado / 100;
-            System.out.println("\nPromedio ponderado = " + promedioPonderado);
+            System.out.println("Promedio ponderado = " + promedioPonderado);
 
             if (promedioPonderado < 60) {
-                System.out.println("Has reprobado.");
+                System.out.println("Has suspendido.");
             } else {
                 System.out.println("Has aprobado.");
             }
